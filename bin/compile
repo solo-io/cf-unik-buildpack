@@ -2,6 +2,8 @@
 
 echo "Running UniK CF Buildpack..."
 
+echo Does $(which go) exist?
+
 set -e
 
 BUILD_DIR=$1
