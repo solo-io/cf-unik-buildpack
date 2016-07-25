@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+#Dumb for now, always run
+exit 0

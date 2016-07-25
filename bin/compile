@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+echo "Running UniK CF Buildpack..."
+
+set -e
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+BUILD_PACK_DIR=$(dirname $(dirname $0))
+
+echo "All arguments [$@]"
+
+if [ ! -d "$BUILD_DIR" ]; then
+  echo "Build directory [$BUILD_DIR] does not exist, creating"
+  mkdir -p "$BUILD_DIR"
+else
+  echo "Build directory [$BUILD_DIR] exists"
+  echo "Build directory contents..."
+  ls -laRh $BUILD_DIR
+fi
+
+echo "Listing Environment:"
+env
+
+echo "Look for staging_info.yml file"
+cat "$BUILD_DIR/staging_info.yml"
+
+echo "The compile script is at [$0]"
+echo "The build pack is situated at [$BUILD_PACK_DIR]"
+
+echo "Running Unikernel Controller in BUILD mode"
+CONTROLLER_BINARY="${BUILD_PACK_DIR}/bin/cf-unik-controller"
+${CONTROLLER_BINARY} -buildDir $BUILD_DIR -build
