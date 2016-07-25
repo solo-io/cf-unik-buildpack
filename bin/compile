@@ -22,9 +22,6 @@ fi
 echo "Listing Environment:"
 env
 
-echo "Look for staging_info.yml file"
-cat "$BUILD_DIR/staging_info.yml"
-
 echo "The compile script is at [$0]"
 echo "The build pack is situated at [$BUILD_PACK_DIR]"
 
