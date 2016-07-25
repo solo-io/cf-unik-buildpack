@@ -27,4 +27,4 @@ echo "The build pack is situated at [$BUILD_PACK_DIR]"
 
 echo "Running Unikernel Controller in BUILD mode"
 CONTROLLER_BINARY="${BUILD_PACK_DIR}/bin/cf-unik-controller"
-${CONTROLLER_BINARY} -buildDir $BUILD_DIR -build
+${CONTROLLER_BINARY} -build-dir $BUILD_DIR -build
