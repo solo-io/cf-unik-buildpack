@@ -19,7 +19,7 @@ const (
 	includeos = "includeos"
 
 	//languages
-	golang = "golang"
+	golang = "go"
 	nodejs = "nodejs"
 	c = "c"
 	cpp = "cpp"
