@@ -103,6 +103,7 @@ func detectLanguage(sourcesDir string) (string, string, error) {
 		if strings.HasSuffix(info.Name(), ".go") {
 			language = golang
 			base = rump
+			return nil
 		} else if strings.HasSuffix(info.Name(), ".py") {
 			language = python
 			base = rump
@@ -112,8 +113,11 @@ func detectLanguage(sourcesDir string) (string, string, error) {
 			base = osv
 			return nil
 		} else if strings.HasSuffix(info.Name(), ".js") {
-			language = nodejs
-			base = rump
+			//be careful we arent serving a website of some sort.. only use JS if we find no other kind of source files
+			if language == "" {
+				language = nodejs
+				base = rump
+			}
 			return nil
 		} else if strings.HasSuffix(info.Name(), ".c") {
 			language = c
