@@ -22,5 +22,5 @@ Note:
 
 Run with
 ```
-cf push -b=https://github.com/emc-advanced-dev/cf-unik-buildpack.git
+cf push -b=https://github.com/cf-unik/cf-unik-buildpack.git
 ```

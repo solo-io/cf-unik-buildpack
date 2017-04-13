@@ -2,10 +2,10 @@ package main
 
 import (
 	"flag"
-	"github.com/emc-advanced-dev/cf-unik-buildpack/builder"
+	"github.com/cf-unik/cf-unik-buildpack/builder"
 	"github.com/Sirupsen/logrus"
 	"os"
-	"github.com/emc-advanced-dev/cf-unik-buildpack/runner"
+	"github.com/cf-unik/cf-unik-buildpack/runner"
 )
 
 func main() {

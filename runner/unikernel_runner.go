@@ -1,9 +1,9 @@
 package runner
 
 import (
-	"github.com/emc-advanced-dev/unik/pkg/client"
-	"github.com/emc-advanced-dev/cf-unik-buildpack/util"
-	"github.com/emc-advanced-dev/pkg/errors"
+	"github.com/cf-unik/unik/pkg/client"
+	"github.com/cf-unik/cf-unik-buildpack/util"
+	"github.com/cf-unik/pkg/errors"
 	"github.com/pborman/uuid"
 	"github.com/Sirupsen/logrus"
 	"os"

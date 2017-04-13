@@ -1,43 +1,44 @@
 package builder
 
 import (
-	"path/filepath"
-	"os"
-	"strings"
-	"github.com/emc-advanced-dev/pkg/errors"
-	"github.com/emc-advanced-dev/unik/pkg/client"
 	"io/ioutil"
-	"github.com/emc-advanced-dev/cf-unik-buildpack/util"
-	"github.com/Sirupsen/logrus"
+	"os"
 	"os/exec"
+	"path/filepath"
+	"strings"
+
+	"github.com/Sirupsen/logrus"
+	"github.com/cf-unik/cf-unik-buildpack/util"
+	"github.com/cf-unik/pkg/errors"
+	"github.com/cf-unik/unik/pkg/client"
 )
 
 const (
 	//bases
-	rump = "rump"
-	osv = "osv"
+	rump      = "rump"
+	osv       = "osv"
 	includeos = "includeos"
 
 	//languages
 	golang = "go"
 	nodejs = "nodejs"
-	c = "c"
-	cpp = "cpp"
-	java = "java"
+	c      = "c"
+	cpp    = "cpp"
+	java   = "java"
 	python = "python"
 
 	not_found = "not found"
 
 	//providers
 	virtualbox = "virtualbox"
-	aws = "aws"
-	xen = "xen"
-	vsphere = "vsphere"
+	aws        = "aws"
+	xen        = "xen"
+	vsphere    = "vsphere"
 )
 
 /*needed metadata in manifest.yml:
-	PROVIDER=aws|virtualbox|vsphere
-	URL=10.10.10.10:3000
+PROVIDER=aws|virtualbox|vsphere
+URL=10.10.10.10:3000
 */
 
 func BuildUnikernel(sourcesDir, host string) error {
@@ -74,12 +75,12 @@ func BuildUnikernel(sourcesDir, host string) error {
 	runArgs := os.Getenv("ARGS")
 	logrus.WithFields(logrus.Fields{
 		"sourcesDir": sourcesDir,
-		"URL": host,
-		"imageName": imageName,
-		"base": base,
-		"lang": lang,
-		"provider": provider,
-		"runArgs": runArgs,
+		"URL":        host,
+		"imageName":  imageName,
+		"base":       base,
+		"lang":       lang,
+		"provider":   provider,
+		"runArgs":    runArgs,
 	}).Infof("building unikernel")
 	if err := doBuildRequest(sourceTar.Name(), host, imageName, base, lang, provider, runArgs); err != nil {
 		return errors.New("failed building image. see UniK daemon logs for more information", err)
