@@ -8,9 +8,9 @@ import (
 	"strings"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/cf-unik/cf-unik-buildpack/util"
-	"github.com/cf-unik/pkg/errors"
-	"github.com/cf-unik/unik/pkg/client"
+	"github.com/solo-io/cf-unik-buildpack/util"
+	"github.com/solo-io/pkg/errors"
+	"github.com/solo-io/unik/pkg/client"
 )
 
 const (

@@ -2,10 +2,10 @@ package main
 
 import (
 	"flag"
-	"github.com/cf-unik/cf-unik-buildpack/builder"
+	"github.com/solo-io/cf-unik-buildpack/builder"
 	"github.com/Sirupsen/logrus"
 	"os"
-	"github.com/cf-unik/cf-unik-buildpack/runner"
+	"github.com/solo-io/cf-unik-buildpack/runner"
 )
 
 func main() {

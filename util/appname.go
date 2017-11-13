@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/cf-unik/pkg/errors"
+	"github.com/solo-io/pkg/errors"
 )
 
 func GetAppName() (string, error) {
